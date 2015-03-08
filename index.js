@@ -25,7 +25,7 @@ function shallowArray(a, b, compare) {
 
   if (compare) {
     for (var i = 0; i < l; i++)
-      if (!compare(a[i], b[i])) return false
+      if (!compare(a[i], b[i], i)) return false
   } else {
     for (var i = 0; i < l; i++) {
       if (a[i] !== b[i]) return false
@@ -43,7 +43,7 @@ function shallowObject(a, b, compare) {
     for (var key in a) {
       if (
         a.hasOwnProperty(key) &&
-        !compare(a[key], b[key])
+        !compare(a[key], b[key], key)
       ) return false
 
       ka++

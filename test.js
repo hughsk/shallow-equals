@@ -53,6 +53,15 @@ test('objects', function(t) {
     }
   ), 'custom comparator')
 
+  t.ok(equals(
+      { a: 'a', b: 'b', c: 'c' }
+    , { a: 'a', b: 'b', c: 'cc' }
+    , function(a, b, key) {
+      if (key === 'c') return true
+      return a === b
+    }
+  ), 'custom comparator with key')
+
   t.notOk(equals(
       { a: 'b', b: 'c', a: 'a' }
     , { a: 'a', b: 'b', c: 'c' }
