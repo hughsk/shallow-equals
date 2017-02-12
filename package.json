@@ -1,7 +1,7 @@
 {
   "name": "shallow-equals",
   "description": "Determine if an array or object is equivalent with another, *not* recursively",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "browser": "index.js",
   "dependencies": {},
