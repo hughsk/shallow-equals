@@ -54,6 +54,11 @@ test('objects', function(t) {
   ), 'custom comparator')
 
   t.notOk(equals(
+      {}
+    , null
+  ), 'comparing to null')
+
+  t.notOk(equals(
       { a: 'b', b: 'c', a: 'a' }
     , { a: 'a', b: 'b', c: 'c' }
   ), 'same contents, different order')
@@ -77,6 +82,7 @@ test('objects', function(t) {
 })
 
 test('other', function(t) {
+  t.ok(equals(null, null), 'null')
   t.ok(equals('hello', 'hello'), 'simplest use case')
   t.ok(equals('hello', 'HELLO', function(a, b) {
     return a.toUpperCase() === b
