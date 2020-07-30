@@ -1,10 +1,13 @@
 module.exports = shallow
 
 function shallow(a, b, compare) {
-  var aIsNull = a === null
-  var bIsNull = b === null
+  if (a === b) {
+    return true;
+  }
 
-  if (aIsNull !== bIsNull) return false
+  if (a == null || b == null) {
+    return false;
+  }
 
   var aIsArray = Array.isArray(a)
   var bIsArray = Array.isArray(b)
